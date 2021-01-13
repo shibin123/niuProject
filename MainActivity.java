@@ -43,7 +43,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 public class MainActivity extends BaseActivity {
     RecyclerView recyclerView;
 
-
+    int a;
     private LinearSmoothScroller mScroller;
     private Disposable mAutoTask;
     private AutoScrollRecyclerView mRv;
@@ -129,7 +129,7 @@ public class MainActivity extends BaseActivity {
     }
 
     void start1() {
-        if (mAutoTask!= null && !mAutoTask.isDisposed()) {
+        if (mAutoTask != null && !mAutoTask.isDisposed()) {
             mAutoTask.dispose();
         }
         mAutoTask = Observable.interval(1, 2, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Long>() {
@@ -145,7 +145,7 @@ public class MainActivity extends BaseActivity {
     }
 
     void stop1() {
-        if (mAutoTask!= null && !mAutoTask.isDisposed()) {
+        if (mAutoTask != null && !mAutoTask.isDisposed()) {
             mAutoTask.dispose();
             mAutoTask = null;
         }
